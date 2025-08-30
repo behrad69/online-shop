@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 class product(models.Model):
-    user = models.ForeignKey('authentication.user', on_delete=models.SET_NULL, null=True)  
     name = models.CharField(max_length=200, null=True, blank=True)  
     image = models.ImageField(null=True, blank=True)  
     brand = models.CharField(max_length=200, null=True, blank=True)

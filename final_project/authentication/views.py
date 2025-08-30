@@ -8,11 +8,11 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             login(request,form.save())
-            messages.success(request,"congrats your data got saved")
+            messages.info(request,"congrats your data got saved")
             return redirect('home')
     else:
         form = UserCreationForm()
-    messages.error(request,"sorry something went wrong")
+        messages.info(request,"sorry something went wrong")
     form = UserCreationForm()
     return render(request,"register.html",{"form" : form} )
 
