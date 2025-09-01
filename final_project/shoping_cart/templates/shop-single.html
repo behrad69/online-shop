@@ -31,6 +31,7 @@ https://templatemo.com/tm-559-zay-shop
 </head>
 
 <body>
+    
     <!-- Start Top Nav -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
         <div class="container text-light">
@@ -127,24 +128,17 @@ https://templatemo.com/tm-559-zay-shop
     </div>
 
 
-
     <!-- Open Content -->
     <section class="bg-light">
         <div class="container pb-5">
             <div class="row">
                 <div class="col-lg-5 mt-5">
                     <div class="card mb-3">
-                        <img class="card-img img-fluid" src="assets/img/product_single_10.jpg" alt="Card image cap" id="product-detail">
+                        <img class="card-img img-fluid" src="{{requested_product.image.url}}" alt="Card image cap" id="product-detail">
                     </div>
                     <div class="row">
                         <!--Start Controls-->
-                        <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="prev">
-                                <i class="text-dark fas fa-chevron-left"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </div>
-                        <!--End Controls-->
+                        
                         <!--Start Carousel Wrapper-->
                         <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
                             <!--Start Slides-->
@@ -154,18 +148,18 @@ https://templatemo.com/tm-559-zay-shop
                                 <div class="carousel-item active">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_01.jpg" alt="Product Image 1">
+                                            <a href="{{requested_product.image.url}}">
+                                                <img class="card-img img-fluid" src="{{requested_product.image.url}}" alt="Product Image 1">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_02.jpg" alt="Product Image 2">
+                                                <img class="card-img img-fluid" src="{{requested_product.image.url}}" alt="Product Image 2">
                                             </a>
                                         </div>
                                         <div class="col-4">
                                             <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_03.jpg" alt="Product Image 3">
+                                                <img class="card-img img-fluid" src="{{requested_product.image.url}}" alt="Product Image 3">
                                             </a>
                                         </div>
                                     </div>
@@ -173,59 +167,18 @@ https://templatemo.com/tm-559-zay-shop
                                 <!--/.First slide-->
 
                                 <!--Second slide-->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_04.jpg" alt="Product Image 4">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_05.jpg" alt="Product Image 5">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_06.jpg" alt="Product Image 6">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <!--/.Second slide-->
 
                                 <!--Third slide-->
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_07.jpg" alt="Product Image 7">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_08.jpg" alt="Product Image 8">
-                                            </a>
-                                        </div>
-                                        <div class="col-4">
-                                            <a href="#">
-                                                <img class="card-img img-fluid" src="assets/img/product_single_09.jpg" alt="Product Image 9">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <!--/.Third slide-->
                             </div>
                             <!--End Slides-->
                         </div>
                         <!--End Carousel Wrapper-->
                         <!--Start Controls-->
-                        <div class="col-1 align-self-center">
-                            <a href="#multi-item-example" role="button" data-bs-slide="next">
-                                <i class="text-dark fas fa-chevron-right"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
+                        
                         <!--End Controls-->
                     </div>
                 </div>
@@ -317,7 +270,6 @@ https://templatemo.com/tm-559-zay-shop
         </div>
     </section>
     <!-- Close Content -->
-
     <!-- Start Article -->
     <section class="py-5">
         <div class="container">
@@ -334,14 +286,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Red Clothing</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Red Clothing</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -372,14 +324,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">White Shirt</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">White Shirt</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -410,14 +362,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_10.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -448,14 +400,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_11.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Black Fashion</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Black Fashion</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -486,14 +438,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li class="">M/L/X/XL</li>
                                 <li class="pt-2">
@@ -524,14 +476,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -562,14 +514,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_10.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -600,14 +552,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_11.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -638,14 +590,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_08.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -676,14 +628,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_09.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -714,14 +666,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_10.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -752,14 +704,14 @@ https://templatemo.com/tm-559-zay-shop
                             <img class="card-img rounded-0 img-fluid" src="assets/img/shop_11.jpg">
                             <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                 <ul class="list-unstyled">
-                                    <li><a class="btn btn-success text-white" href="{% url 'cart' %}"><i class="far fa-heart"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="far fa-eye"></i></a></li>
-                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' %}"><i class="fas fa-cart-plus"></i></a></li>
+                                    <li><a class="btn btn-success text-white" href="{% url 'cart' 1 %}"><i class="far fa-heart"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="far fa-eye"></i></a></li>
+                                    <li><a class="btn btn-success text-white mt-2" href="{% url 'cart' 1 %}"><i class="fas fa-cart-plus"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="card-body">
-                            <a href="{% url 'cart' %}" class="h3 text-decoration-none">Oupidatat non</a>
+                            <a href="{% url 'cart' 1 %}" class="h3 text-decoration-none">Oupidatat non</a>
                             <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                 <li>M/L/X/XL</li>
                                 <li class="pt-2">
@@ -790,7 +742,6 @@ https://templatemo.com/tm-559-zay-shop
         </div>
     </section>
     <!-- End Article -->
-
 
     <!-- Start Footer -->
     <footer class="bg-dark" id="tempaltemo_footer">
