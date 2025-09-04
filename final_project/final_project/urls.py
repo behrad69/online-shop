@@ -18,17 +18,18 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from shoping_cart.views import cart_view
+from shoping_cart.views import cart_view,select_product
 from Home_page.views import about,contact,base_web
 from commodity.views import goods
 from authentication.views import register,login_user
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', base_web, name='home'),
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
     path('cart/<int:id>/', cart_view, name='cart'),
+    path('cart/<int:id>/checkout/', select_product, name='checkout'),
+    #path('checkout/', select_product, name='checkout'),
     path('commodity/', goods, name='goods'),
     path('id/', register, name='identification'),
     path('signin/', login_user, name='login'),

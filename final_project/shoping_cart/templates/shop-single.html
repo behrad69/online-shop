@@ -224,13 +224,17 @@ https://templatemo.com/tm-559-zay-shop
                                 <li>{{requested_product.createdAt}}</li>
                             </ul>
 
-                            <form action="" method="GET">
+                            <form action="{% url 'checkout' requested_product.id %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{form}}
+                                
+                                
                                 <input type="hidden" name="product-title" value="Activewear">
                                 <div class="row">
                                     <div class="col-auto">
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item">color :
-                                                <input type="hidden" name="product-size" id="product-size" value="S">
+                                                <input type="hidden" name="color" id="product-size">
                                             </li>
                                             <li class="list-inline-item"><span class="btn btn-success btn-size">red</span></li>
                                             <li class="list-inline-item"><span class="btn btn-success btn-size">pink</span></li>
@@ -242,7 +246,7 @@ https://templatemo.com/tm-559-zay-shop
                                         <ul class="list-inline pb-3">
                                             <li class="list-inline-item text-right">
                                                 Quantity
-                                                <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                                                <input type="hidden" name="quantity" id="product-quanity">
                                             </li>
                                             <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
                                             <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
@@ -273,7 +277,8 @@ https://templatemo.com/tm-559-zay-shop
 
             <!--Start Carousel Wrapper-->
             <div id="carousel-related-product">
-{% for product in products %}
+                {% for product in products %}
+                {% if product.category == requested_product.category %}
                 <div class="p-2 pb-3">
                     <div class="product-wap card rounded-0">
                         <div class="card rounded-0">
@@ -309,6 +314,7 @@ https://templatemo.com/tm-559-zay-shop
                         </div>
                     </div>
                 </div>
+                {% endif %}
             {% endfor %}
             </div>
 
