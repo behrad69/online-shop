@@ -7,4 +7,5 @@ class cart(models.Model):
     quantity = models.IntegerField(null=True)
     price = models.IntegerField(null=True)
     color = models.CharField(max_length=200,null=True)
+    img = models.ImageField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
