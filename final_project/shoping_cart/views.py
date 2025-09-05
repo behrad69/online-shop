@@ -41,7 +41,7 @@ def bills(request):
     sum = 0
     for i in order:
         if (i.user == user):
-            sum += i.price
+            sum += i.price * i.quantity
     total = sum + 10000
     return render(request,'checkout.html',{'order' : order, 'count': count, 'user': user,'sum': sum,'total': total})
 def delete_item(request, item_id):
